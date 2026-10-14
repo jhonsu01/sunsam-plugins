@@ -33,19 +33,22 @@
       "type": "directory",
       "title": "PdfCraft folder",
       "description": "Install folder of PdfCraft (or PdfCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\PdfCraft, /Applications/PdfCraft.app, /usr/bin, /opt/pdfcraft or PATH.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "pdfcraft_cli": {
       "type": "file",
       "title": "pdfcraft-cli executable (optional)",
       "description": "Only if it is somewhere else, e.g. where you unzipped pdfcraft-cli-<version>-macos-universal.zip on macOS.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "pdfcraft_root": {
       "type": "directory",
       "title": "Limit access to this folder (optional)",
       "description": "When set, PdfCraft may only read and write files inside this folder.",
-      "required": false
+      "required": false,
+      "default": ""
     }
   },
   "mcpServers": {

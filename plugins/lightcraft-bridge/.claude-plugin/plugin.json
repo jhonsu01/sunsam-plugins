@@ -33,19 +33,22 @@
       "type": "directory",
       "title": "LightCraft folder",
       "description": "Install folder of LightCraft (or LightCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\LightCraft, /Applications/LightCraft.app, /usr/bin, /opt/lightcraft or PATH.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "lightcraft_cli": {
       "type": "file",
       "title": "lightcraft-cli executable (optional)",
       "description": "Only if it is somewhere else, e.g. where you unzipped lightcraft-cli-<version>-macos-universal.zip on macOS.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "control_port": {
       "type": "string",
       "title": "LightCraft control port (optional)",
       "description": "Port used to drive the LightCraft app (run_lightcraft_commands live). Default 7980.",
-      "required": false
+      "required": false,
+      "default": ""
     }
   },
   "mcpServers": {

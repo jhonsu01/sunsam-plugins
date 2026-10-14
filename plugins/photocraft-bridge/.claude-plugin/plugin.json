@@ -33,19 +33,22 @@
       "type": "directory",
       "title": "PhotoCraft folder",
       "description": "Install folder of PhotoCraft (or PhotoCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\PhotoCraft, /Applications/PhotoCraft.app, /usr/bin, /opt/photocraft or PATH.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "photocraft_cli": {
       "type": "file",
       "title": "photocraft-cli executable (optional)",
       "description": "Only if it is somewhere else, e.g. where you unzipped photocraft-cli-<version>-macos-universal.zip on macOS.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "control_port": {
       "type": "string",
       "title": "PhotoCraft control port (optional)",
       "description": "Port used to drive the PhotoCraft app (run_photo_commands live). Default 7878.",
-      "required": false
+      "required": false,
+      "default": ""
     }
   },
   "mcpServers": {

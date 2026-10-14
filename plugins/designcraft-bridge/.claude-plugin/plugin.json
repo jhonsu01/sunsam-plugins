@@ -33,19 +33,22 @@
       "type": "directory",
       "title": "DesignCraft folder",
       "description": "Install folder of DesignCraft (or DesignCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\DesignCraft, /Applications/DesignCraft.app, /usr/bin, /opt/designcraft or PATH.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "designcraft_cli": {
       "type": "file",
       "title": "designcraft-cli executable (optional)",
       "description": "Only if it is somewhere else, e.g. where you unzipped designcraft-cli-<version>-macos-universal.zip on macOS.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "control_port": {
       "type": "string",
       "title": "DesignCraft control port (optional)",
       "description": "Port used to drive the DesignCraft app (live mode). Default 7981.",
-      "required": false
+      "required": false,
+      "default": ""
     }
   },
   "mcpServers": {

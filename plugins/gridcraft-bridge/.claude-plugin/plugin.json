@@ -33,19 +33,22 @@
       "type": "directory",
       "title": "GridCraft folder",
       "description": "Install folder of GridCraft (or GridCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\GridCraft, /Applications/GridCraft.app, /usr/bin, /opt/gridcraft or PATH.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "gridcraft_cli": {
       "type": "file",
       "title": "gridcraft-cli executable (optional)",
       "description": "Only if it is somewhere else, e.g. where you unzipped the gridcraft-cli zip on macOS.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "control_port": {
       "type": "string",
       "title": "GridCraft control port (optional)",
       "description": "Port used to drive the GridCraft app (open_in_gridcraft, run_gridcraft_commands live). Default 7979.",
-      "required": false
+      "required": false,
+      "default": ""
     }
   },
   "mcpServers": {

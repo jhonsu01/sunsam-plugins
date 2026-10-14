@@ -33,19 +33,22 @@
       "type": "directory",
       "title": "SoundCraft folder",
       "description": "Install folder of SoundCraft (or SoundCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\SoundCraft, /Applications/SoundCraft.app, /usr/bin, /opt/soundcraft or PATH.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "soundcraft_cli": {
       "type": "file",
       "title": "soundcraft-cli executable (optional)",
       "description": "Only if it is somewhere else, e.g. where you unzipped the soundcraft-cli zip on macOS.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "control_port": {
       "type": "string",
       "title": "SoundCraft control port (optional)",
       "description": "Port used to drive the SoundCraft app (open_in_soundcraft, run_soundcraft_commands live). Default 7801.",
-      "required": false
+      "required": false,
+      "default": ""
     }
   },
   "mcpServers": {

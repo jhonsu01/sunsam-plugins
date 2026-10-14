@@ -33,19 +33,22 @@
       "type": "directory",
       "title": "WordCraft folder",
       "description": "Install folder of WordCraft (or WordCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\WordCraft, /Applications/WordCraft.app, /usr/bin, /opt/wordcraft or PATH.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "wordcraft_cli": {
       "type": "file",
       "title": "wordcraft-cli executable (optional)",
       "description": "Only if it is somewhere else, e.g. where you unzipped the wordcraft-cli zip on macOS.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "control_port": {
       "type": "string",
       "title": "WordCraft control port (optional)",
       "description": "Port used to drive the WordCraft app (open_in_wordcraft, run_wordcraft_commands live). Default 7985.",
-      "required": false
+      "required": false,
+      "default": ""
     }
   },
   "mcpServers": {

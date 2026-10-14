@@ -33,19 +33,22 @@
       "type": "directory",
       "title": "EffectCraft folder",
       "description": "Install folder of EffectCraft (or EffectCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\EffectCraft, /Applications/EffectCraft.app, /usr/bin, /opt/effectcraft or PATH.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "effectcraft_cli": {
       "type": "file",
       "title": "effectcraft-cli executable (optional)",
       "description": "Only if it is somewhere else, e.g. where you unzipped effectcraft-cli-<version>-macos-universal.zip on macOS.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "control_port": {
       "type": "string",
       "title": "EffectCraft control port (optional)",
       "description": "Port used to drive the EffectCraft app (live mode). Default 9877.",
-      "required": false
+      "required": false,
+      "default": ""
     }
   },
   "mcpServers": {

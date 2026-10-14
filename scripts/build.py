@@ -127,7 +127,9 @@ def main():
             'documentationUrl': c['repository'] + '#readme',
             'supportUrl': c['repository'] + '/issues',
             'privacyPolicyUrl': REPO + '/blob/main/PRIVACY.md',
-            'userConfig': {k: {kk: vv for kk, vv in v.items() if kk in USER_CONFIG_KEYS} for k, v in m.get('user_config', {}).items()},
+            # every option gets a default: Cowork ignores a server whose ${user_config.*} option has none (it never prompts);
+            # an empty value means "auto-detect" to the server
+            'userConfig': {k: {**{kk: vv for kk, vv in v.items() if kk in USER_CONFIG_KEYS}, 'default': v.get('default', '')} for k, v in m.get('user_config', {}).items()},
             'mcpServers': {server: {'command': 'node', 'args': ['${CLAUDE_PLUGIN_ROOT}/dist/bundle.cjs'], 'env': env}},
         }
         with open(os.path.join(out, '.claude-plugin', 'plugin.json'), 'w', encoding='utf-8', newline='\n') as f:

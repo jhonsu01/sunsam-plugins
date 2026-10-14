@@ -33,19 +33,22 @@
       "type": "directory",
       "title": "VectorCraft folder",
       "description": "Install folder of VectorCraft (or VectorCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\VectorCraft, /Applications/VectorCraft.app, /usr/bin, /opt/vectorcraft or PATH.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "vectorcraft_cli": {
       "type": "file",
       "title": "vectorcraft-cli executable (optional)",
       "description": "Only if it is somewhere else, e.g. where you unzipped vectorcraft-cli-<version>-macos-universal.zip on macOS.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "control_port": {
       "type": "string",
       "title": "VectorCraft control port (optional)",
       "description": "Port used to drive the VectorCraft app (run_vector_commands live). Default 7979.",
-      "required": false
+      "required": false,
+      "default": ""
     }
   },
   "mcpServers": {

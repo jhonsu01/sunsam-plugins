@@ -33,19 +33,22 @@
       "type": "directory",
       "title": "DeckCraft folder",
       "description": "Install folder of DeckCraft (or DeckCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\DeckCraft, /Applications/DeckCraft.app, /usr/bin, /opt/deckcraft or PATH.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "deckcraft_cli": {
       "type": "file",
       "title": "deckcraft-cli executable (optional)",
       "description": "Only if it is somewhere else, e.g. where you unzipped the deckcraft-cli zip on macOS.",
-      "required": false
+      "required": false,
+      "default": ""
     },
     "control_port": {
       "type": "string",
       "title": "DeckCraft control port (optional)",
       "description": "Port used to drive the DeckCraft app (open_in_deckcraft, run_deckcraft_commands live). Default 7990.",
-      "required": false
+      "required": false,
+      "default": ""
     }
   },
   "mcpServers": {
