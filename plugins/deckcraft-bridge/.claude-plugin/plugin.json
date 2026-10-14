@@ -1,0 +1,64 @@
+{
+  "name": "deckcraft-bridge",
+  "displayName": "DeckCraft Bridge",
+  "version": "1.0.0",
+  "description": "Create, edit and convert presentations with the DeckCraft app installed on Windows, macOS or Linux: slides with bullets, pictures, charts, tables and notes, themes, transitions, PowerPoint pptx, pdf and slide images. Not affiliated with DeckCraft or Storytold.",
+  "author": {
+    "name": "Jhon Supelano",
+    "url": "https://github.com/jhonsu01"
+  },
+  "homepage": "https://github.com/jhonsu01/deckcraft-mcp-server",
+  "repository": "https://github.com/jhonsu01/sunsam-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "deckcraft",
+    "powerpoint",
+    "pptx",
+    "presentation",
+    "slides",
+    "deck",
+    "charts",
+    "pdf",
+    "themes",
+    "windows",
+    "macos",
+    "linux"
+  ],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://github.com/jhonsu01/deckcraft-mcp-server#readme",
+  "supportUrl": "https://github.com/jhonsu01/deckcraft-mcp-server/issues",
+  "privacyPolicyUrl": "https://github.com/jhonsu01/sunsam-plugins/blob/main/PRIVACY.md",
+  "userConfig": {
+    "deckcraft_dir": {
+      "type": "directory",
+      "title": "DeckCraft folder",
+      "description": "Install folder of DeckCraft (or DeckCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\DeckCraft, /Applications/DeckCraft.app, /usr/bin, /opt/deckcraft or PATH.",
+      "required": false
+    },
+    "deckcraft_cli": {
+      "type": "file",
+      "title": "deckcraft-cli executable (optional)",
+      "description": "Only if it is somewhere else, e.g. where you unzipped the deckcraft-cli zip on macOS.",
+      "required": false
+    },
+    "control_port": {
+      "type": "string",
+      "title": "DeckCraft control port (optional)",
+      "description": "Port used to drive the DeckCraft app (open_in_deckcraft, run_deckcraft_commands live). Default 7990.",
+      "required": false
+    }
+  },
+  "mcpServers": {
+    "deckcraft": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/dist/bundle.cjs"
+      ],
+      "env": {
+        "DECKCRAFT_DIR": "${user_config.deckcraft_dir}",
+        "DECKCRAFT_CLI": "${user_config.deckcraft_cli}",
+        "DECKCRAFT_CONTROL_PORT": "${user_config.control_port}"
+      }
+    }
+  }
+}

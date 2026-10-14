@@ -1,0 +1,64 @@
+{
+  "name": "designcraft-bridge",
+  "displayName": "DesignCraft Bridge",
+  "version": "1.0.4",
+  "description": "Lay out flyers, posters, brochures, menus, cards, certificates and book pages, mail-merge CSV data, edit .designcraft and InDesign .idml documents and export print-ready PDF (PDF/X-4), PNG, IDML, EPUB and HTML, using the DesignCraft publishing app installed on Windows, macOS or Linux. Not affiliated with DesignCraft or Storytold.",
+  "author": {
+    "name": "Jhon Supelano",
+    "url": "https://github.com/jhonsu01"
+  },
+  "homepage": "https://github.com/jhonsu01/designcraft-mcp-server",
+  "repository": "https://github.com/jhonsu01/sunsam-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "designcraft",
+    "indesign",
+    "idml",
+    "desktop-publishing",
+    "layout",
+    "pdf",
+    "pdf-x",
+    "data-merge",
+    "print",
+    "epub",
+    "windows",
+    "macos"
+  ],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://github.com/jhonsu01/designcraft-mcp-server#readme",
+  "supportUrl": "https://github.com/jhonsu01/designcraft-mcp-server/issues",
+  "privacyPolicyUrl": "https://github.com/jhonsu01/sunsam-plugins/blob/main/PRIVACY.md",
+  "userConfig": {
+    "designcraft_dir": {
+      "type": "directory",
+      "title": "DesignCraft folder",
+      "description": "Install folder of DesignCraft (or DesignCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\DesignCraft, /Applications/DesignCraft.app, /usr/bin, /opt/designcraft or PATH.",
+      "required": false
+    },
+    "designcraft_cli": {
+      "type": "file",
+      "title": "designcraft-cli executable (optional)",
+      "description": "Only if it is somewhere else, e.g. where you unzipped designcraft-cli-<version>-macos-universal.zip on macOS.",
+      "required": false
+    },
+    "control_port": {
+      "type": "string",
+      "title": "DesignCraft control port (optional)",
+      "description": "Port used to drive the DesignCraft app (live mode). Default 7981.",
+      "required": false
+    }
+  },
+  "mcpServers": {
+    "designcraft": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/dist/bundle.cjs"
+      ],
+      "env": {
+        "DESIGNCRAFT_DIR": "${user_config.designcraft_dir}",
+        "DESIGNCRAFT_CLI": "${user_config.designcraft_cli}",
+        "DESIGNCRAFT_CONTROL_PORT": "${user_config.control_port}"
+      }
+    }
+  }
+}

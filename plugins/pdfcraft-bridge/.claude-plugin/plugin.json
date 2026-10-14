@@ -1,0 +1,64 @@
+{
+  "name": "pdfcraft-bridge",
+  "displayName": "PdfCraft Bridge",
+  "version": "1.0.3",
+  "description": "Read, split, merge, organize, watermark, protect, redact, fill, sign, convert, compress and OCR PDFs with the PdfCraft editor installed on Windows, macOS or Linux. Not affiliated with PdfCraft or Storytold.",
+  "author": {
+    "name": "Jhon Supelano",
+    "url": "https://github.com/jhonsu01"
+  },
+  "homepage": "https://github.com/jhonsu01/pdfcraft-mcp-server",
+  "repository": "https://github.com/jhonsu01/sunsam-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "pdfcraft",
+    "pdf",
+    "split",
+    "merge",
+    "watermark",
+    "redact",
+    "forms",
+    "sign",
+    "ocr",
+    "pdf-a",
+    "windows",
+    "macos"
+  ],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://github.com/jhonsu01/pdfcraft-mcp-server#readme",
+  "supportUrl": "https://github.com/jhonsu01/pdfcraft-mcp-server/issues",
+  "privacyPolicyUrl": "https://github.com/jhonsu01/sunsam-plugins/blob/main/PRIVACY.md",
+  "userConfig": {
+    "pdfcraft_dir": {
+      "type": "directory",
+      "title": "PdfCraft folder",
+      "description": "Install folder of PdfCraft (or PdfCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\PdfCraft, /Applications/PdfCraft.app, /usr/bin, /opt/pdfcraft or PATH.",
+      "required": false
+    },
+    "pdfcraft_cli": {
+      "type": "file",
+      "title": "pdfcraft-cli executable (optional)",
+      "description": "Only if it is somewhere else, e.g. where you unzipped pdfcraft-cli-<version>-macos-universal.zip on macOS.",
+      "required": false
+    },
+    "pdfcraft_root": {
+      "type": "directory",
+      "title": "Limit access to this folder (optional)",
+      "description": "When set, PdfCraft may only read and write files inside this folder.",
+      "required": false
+    }
+  },
+  "mcpServers": {
+    "pdfcraft": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/dist/bundle.cjs"
+      ],
+      "env": {
+        "PDFCRAFT_DIR": "${user_config.pdfcraft_dir}",
+        "PDFCRAFT_CLI": "${user_config.pdfcraft_cli}",
+        "PDFCRAFT_ROOT": "${user_config.pdfcraft_root}"
+      }
+    }
+  }
+}

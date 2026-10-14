@@ -1,0 +1,64 @@
+{
+  "name": "filmcraft-bridge",
+  "displayName": "FilmCraft Bridge",
+  "version": "1.1.4",
+  "description": "Split, trim, edit (effects, color looks, titles, speed, audio), join, convert and export video with the FilmCraft editor installed on Windows, macOS or Linux, and keep every edit editable. Not affiliated with FilmCraft or Storytold.",
+  "author": {
+    "name": "Jhon Supelano",
+    "url": "https://github.com/jhonsu01"
+  },
+  "homepage": "https://github.com/jhonsu01/filmcraft-mcp-server",
+  "repository": "https://github.com/jhonsu01/sunsam-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "filmcraft",
+    "video",
+    "video-editing",
+    "split",
+    "trim",
+    "effects",
+    "color",
+    "titles",
+    "transitions",
+    "export",
+    "windows",
+    "macos"
+  ],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://github.com/jhonsu01/filmcraft-mcp-server#readme",
+  "supportUrl": "https://github.com/jhonsu01/filmcraft-mcp-server/issues",
+  "privacyPolicyUrl": "https://github.com/jhonsu01/sunsam-plugins/blob/main/PRIVACY.md",
+  "userConfig": {
+    "filmcraft_dir": {
+      "type": "directory",
+      "title": "FilmCraft folder",
+      "description": "Install folder of FilmCraft (or FilmCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\FilmCraft, /Applications/FilmCraft.app, /usr/bin, /opt/filmcraft or PATH.",
+      "required": false
+    },
+    "filmcraft_cli": {
+      "type": "file",
+      "title": "filmcraft-cli executable (optional)",
+      "description": "Only if it is somewhere else, e.g. where you unzipped filmcraft-cli-<version>-macos.zip on macOS.",
+      "required": false
+    },
+    "control_port": {
+      "type": "string",
+      "title": "FilmCraft control port (optional)",
+      "description": "Port used to drive the FilmCraft app (open_in_filmcraft, run_commands live). Default 9876.",
+      "required": false
+    }
+  },
+  "mcpServers": {
+    "filmcraft": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/dist/bundle.cjs"
+      ],
+      "env": {
+        "FILMCRAFT_DIR": "${user_config.filmcraft_dir}",
+        "FILMCRAFT_CLI": "${user_config.filmcraft_cli}",
+        "FILMCRAFT_CONTROL_PORT": "${user_config.control_port}"
+      }
+    }
+  }
+}

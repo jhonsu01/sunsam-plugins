@@ -1,0 +1,64 @@
+{
+  "name": "wordcraft-bridge",
+  "displayName": "WordCraft Bridge",
+  "version": "1.0.1",
+  "description": "Write, edit (find/replace, comments, tracked changes), mail-merge, convert and preview documents with the WordCraft word processor installed on Windows, macOS or Linux. Not affiliated with WordCraft or Storytold.",
+  "author": {
+    "name": "Jhon Supelano",
+    "url": "https://github.com/jhonsu01"
+  },
+  "homepage": "https://github.com/jhonsu01/wordcraft-mcp-server",
+  "repository": "https://github.com/jhonsu01/sunsam-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "wordcraft",
+    "word",
+    "docx",
+    "documents",
+    "word-processor",
+    "mail-merge",
+    "tracked-changes",
+    "pdf",
+    "odt",
+    "markdown",
+    "windows",
+    "macos"
+  ],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://github.com/jhonsu01/wordcraft-mcp-server#readme",
+  "supportUrl": "https://github.com/jhonsu01/wordcraft-mcp-server/issues",
+  "privacyPolicyUrl": "https://github.com/jhonsu01/sunsam-plugins/blob/main/PRIVACY.md",
+  "userConfig": {
+    "wordcraft_dir": {
+      "type": "directory",
+      "title": "WordCraft folder",
+      "description": "Install folder of WordCraft (or WordCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\WordCraft, /Applications/WordCraft.app, /usr/bin, /opt/wordcraft or PATH.",
+      "required": false
+    },
+    "wordcraft_cli": {
+      "type": "file",
+      "title": "wordcraft-cli executable (optional)",
+      "description": "Only if it is somewhere else, e.g. where you unzipped the wordcraft-cli zip on macOS.",
+      "required": false
+    },
+    "control_port": {
+      "type": "string",
+      "title": "WordCraft control port (optional)",
+      "description": "Port used to drive the WordCraft app (open_in_wordcraft, run_wordcraft_commands live). Default 7985.",
+      "required": false
+    }
+  },
+  "mcpServers": {
+    "wordcraft": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/dist/bundle.cjs"
+      ],
+      "env": {
+        "WORDCRAFT_DIR": "${user_config.wordcraft_dir}",
+        "WORDCRAFT_CLI": "${user_config.wordcraft_cli}",
+        "WORDCRAFT_CONTROL_PORT": "${user_config.control_port}"
+      }
+    }
+  }
+}

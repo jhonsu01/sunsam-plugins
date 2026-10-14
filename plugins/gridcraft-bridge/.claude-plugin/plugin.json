@@ -1,0 +1,64 @@
+{
+  "name": "gridcraft-bridge",
+  "displayName": "GridCraft Bridge",
+  "version": "1.0.0",
+  "description": "Build, edit, read and convert spreadsheets with the GridCraft app installed on Windows, macOS or Linux: sheets with live formulas, tables, formats, conditional formatting, charts and PivotTables, xlsx, csv, json, html and pdf. Not affiliated with GridCraft or Storytold.",
+  "author": {
+    "name": "Jhon Supelano",
+    "url": "https://github.com/jhonsu01"
+  },
+  "homepage": "https://github.com/jhonsu01/gridcraft-mcp-server",
+  "repository": "https://github.com/jhonsu01/sunsam-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "gridcraft",
+    "excel",
+    "xlsx",
+    "spreadsheet",
+    "formulas",
+    "csv",
+    "pivot-table",
+    "charts",
+    "data",
+    "windows",
+    "macos",
+    "linux"
+  ],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://github.com/jhonsu01/gridcraft-mcp-server#readme",
+  "supportUrl": "https://github.com/jhonsu01/gridcraft-mcp-server/issues",
+  "privacyPolicyUrl": "https://github.com/jhonsu01/sunsam-plugins/blob/main/PRIVACY.md",
+  "userConfig": {
+    "gridcraft_dir": {
+      "type": "directory",
+      "title": "GridCraft folder",
+      "description": "Install folder of GridCraft (or GridCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\GridCraft, /Applications/GridCraft.app, /usr/bin, /opt/gridcraft or PATH.",
+      "required": false
+    },
+    "gridcraft_cli": {
+      "type": "file",
+      "title": "gridcraft-cli executable (optional)",
+      "description": "Only if it is somewhere else, e.g. where you unzipped the gridcraft-cli zip on macOS.",
+      "required": false
+    },
+    "control_port": {
+      "type": "string",
+      "title": "GridCraft control port (optional)",
+      "description": "Port used to drive the GridCraft app (open_in_gridcraft, run_gridcraft_commands live). Default 7979.",
+      "required": false
+    }
+  },
+  "mcpServers": {
+    "gridcraft": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/dist/bundle.cjs"
+      ],
+      "env": {
+        "GRIDCRAFT_DIR": "${user_config.gridcraft_dir}",
+        "GRIDCRAFT_CLI": "${user_config.gridcraft_cli}",
+        "GRIDCRAFT_CONTROL_PORT": "${user_config.control_port}"
+      }
+    }
+  }
+}

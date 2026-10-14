@@ -1,0 +1,64 @@
+{
+  "name": "lightcraft-bridge",
+  "displayName": "LightCraft Bridge",
+  "version": "1.0.3",
+  "description": "Develop photos and raw files (auto tone, white balance, 114 sliders, presets, profiles, masks, spot healing, crop), merge HDR and panoramas, cull by sharpness and export JPEG, TIFF, WebP, AVIF or DNG, using the LightCraft raw developer installed on Windows, macOS or Linux. Not affiliated with LightCraft or Storytold.",
+  "author": {
+    "name": "Jhon Supelano",
+    "url": "https://github.com/jhonsu01"
+  },
+  "homepage": "https://github.com/jhonsu01/lightcraft-mcp-server",
+  "repository": "https://github.com/jhonsu01/sunsam-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "lightcraft",
+    "lightroom",
+    "raw",
+    "photo",
+    "dng",
+    "hdr",
+    "panorama",
+    "presets",
+    "batch",
+    "jpeg",
+    "windows",
+    "macos"
+  ],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://github.com/jhonsu01/lightcraft-mcp-server#readme",
+  "supportUrl": "https://github.com/jhonsu01/lightcraft-mcp-server/issues",
+  "privacyPolicyUrl": "https://github.com/jhonsu01/sunsam-plugins/blob/main/PRIVACY.md",
+  "userConfig": {
+    "lightcraft_dir": {
+      "type": "directory",
+      "title": "LightCraft folder",
+      "description": "Install folder of LightCraft (or LightCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\LightCraft, /Applications/LightCraft.app, /usr/bin, /opt/lightcraft or PATH.",
+      "required": false
+    },
+    "lightcraft_cli": {
+      "type": "file",
+      "title": "lightcraft-cli executable (optional)",
+      "description": "Only if it is somewhere else, e.g. where you unzipped lightcraft-cli-<version>-macos-universal.zip on macOS.",
+      "required": false
+    },
+    "control_port": {
+      "type": "string",
+      "title": "LightCraft control port (optional)",
+      "description": "Port used to drive the LightCraft app (run_lightcraft_commands live). Default 7980.",
+      "required": false
+    }
+  },
+  "mcpServers": {
+    "lightcraft": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/dist/bundle.cjs"
+      ],
+      "env": {
+        "LIGHTCRAFT_DIR": "${user_config.lightcraft_dir}",
+        "LIGHTCRAFT_CLI": "${user_config.lightcraft_cli}",
+        "LIGHTCRAFT_CONTROL_PORT": "${user_config.control_port}"
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "effectcraft-bridge",
+  "displayName": "EffectCraft Bridge",
+  "version": "1.0.5",
+  "description": "Create motion graphics, animated titles and visual effects (text, shapes, media, keyframes, expressions, 306 effects, templates) and render MP4, ProRes, WebM, GIF, image sequences and Lottie, using the EffectCraft compositor installed on Windows, macOS or Linux. Not affiliated with EffectCraft or Storytold.",
+  "author": {
+    "name": "Jhon Supelano",
+    "url": "https://github.com/jhonsu01"
+  },
+  "homepage": "https://github.com/jhonsu01/effectcraft-mcp-server",
+  "repository": "https://github.com/jhonsu01/sunsam-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "effectcraft",
+    "after-effects",
+    "motion-graphics",
+    "vfx",
+    "animation",
+    "titles",
+    "lottie",
+    "video",
+    "templates",
+    "windows",
+    "macos",
+    "linux"
+  ],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://github.com/jhonsu01/effectcraft-mcp-server#readme",
+  "supportUrl": "https://github.com/jhonsu01/effectcraft-mcp-server/issues",
+  "privacyPolicyUrl": "https://github.com/jhonsu01/sunsam-plugins/blob/main/PRIVACY.md",
+  "userConfig": {
+    "effectcraft_dir": {
+      "type": "directory",
+      "title": "EffectCraft folder",
+      "description": "Install folder of EffectCraft (or EffectCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\EffectCraft, /Applications/EffectCraft.app, /usr/bin, /opt/effectcraft or PATH.",
+      "required": false
+    },
+    "effectcraft_cli": {
+      "type": "file",
+      "title": "effectcraft-cli executable (optional)",
+      "description": "Only if it is somewhere else, e.g. where you unzipped effectcraft-cli-<version>-macos-universal.zip on macOS.",
+      "required": false
+    },
+    "control_port": {
+      "type": "string",
+      "title": "EffectCraft control port (optional)",
+      "description": "Port used to drive the EffectCraft app (live mode). Default 9877.",
+      "required": false
+    }
+  },
+  "mcpServers": {
+    "effectcraft": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/dist/bundle.cjs"
+      ],
+      "env": {
+        "EFFECTCRAFT_DIR": "${user_config.effectcraft_dir}",
+        "EFFECTCRAFT_CLI": "${user_config.effectcraft_cli}",
+        "EFFECTCRAFT_CONTROL_PORT": "${user_config.control_port}"
+      }
+    }
+  }
+}

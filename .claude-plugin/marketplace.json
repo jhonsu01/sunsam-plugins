@@ -1,0 +1,178 @@
+{
+  "name": "sunsam-plugins",
+  "owner": {
+    "name": "Jhon Supelano",
+    "url": "https://github.com/jhonsu01"
+  },
+  "metadata": {
+    "description": "Craft Bridges: community Claude Code plugins that connect Claude to the open-source Craft apps installed on your computer.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "designcraft-bridge",
+      "source": "./plugins/designcraft-bridge",
+      "description": "Lay out flyers, posters, brochures, menus, cards, certificates and book pages, mail-merge CSV data, edit .designcraft and InDesign .idml documents and export print-ready PDF (PDF/X-4), PNG, IDML, EPUB and HTML, using the DesignCraft publishing app installed on Windows, macOS or Linux. Not affiliated with DesignCraft or Storytold.",
+      "version": "1.0.4",
+      "category": "design",
+      "keywords": [
+        "designcraft",
+        "indesign",
+        "idml",
+        "desktop-publishing",
+        "layout",
+        "pdf"
+      ]
+    },
+    {
+      "name": "effectcraft-bridge",
+      "source": "./plugins/effectcraft-bridge",
+      "description": "Create motion graphics, animated titles and visual effects (text, shapes, media, keyframes, expressions, 306 effects, templates) and render MP4, ProRes, WebM, GIF, image sequences and Lottie, using the EffectCraft compositor installed on Windows, macOS or Linux. Not affiliated with EffectCraft or Storytold.",
+      "version": "1.0.5",
+      "category": "design",
+      "keywords": [
+        "effectcraft",
+        "after-effects",
+        "motion-graphics",
+        "vfx",
+        "animation",
+        "titles"
+      ]
+    },
+    {
+      "name": "lightcraft-bridge",
+      "source": "./plugins/lightcraft-bridge",
+      "description": "Develop photos and raw files (auto tone, white balance, 114 sliders, presets, profiles, masks, spot healing, crop), merge HDR and panoramas, cull by sharpness and export JPEG, TIFF, WebP, AVIF or DNG, using the LightCraft raw developer installed on Windows, macOS or Linux. Not affiliated with LightCraft or Storytold.",
+      "version": "1.0.3",
+      "category": "design",
+      "keywords": [
+        "lightcraft",
+        "lightroom",
+        "raw",
+        "photo",
+        "dng",
+        "hdr"
+      ]
+    },
+    {
+      "name": "photocraft-bridge",
+      "source": "./plugins/photocraft-bridge",
+      "description": "Edit photos (resize, crop, adjustments, Camera Raw, filters, remove background, text, shapes, layer styles), create designs and convert between PSD, TIFF, PNG, JPEG, WebP, EXR and more, using the PhotoCraft editor installed on Windows, macOS or Linux. Not affiliated with PhotoCraft or Storytold.",
+      "version": "1.0.3",
+      "category": "design",
+      "keywords": [
+        "photocraft",
+        "photoshop",
+        "photo",
+        "image",
+        "psd",
+        "remove-background"
+      ]
+    },
+    {
+      "name": "vectorcraft-bridge",
+      "source": "./plugins/vectorcraft-bridge",
+      "description": "Vectorize images, convert between SVG, PDF, AI, EPS, DXF, PNG and more, create and recolor vector designs with shapes, text, charts and effects, using the VectorCraft editor installed on Windows, macOS or Linux. Not affiliated with VectorCraft or Storytold.",
+      "version": "1.0.5",
+      "category": "design",
+      "keywords": [
+        "vectorcraft",
+        "vector",
+        "svg",
+        "illustrator",
+        "image-trace",
+        "vectorize"
+      ]
+    },
+    {
+      "name": "filmcraft-bridge",
+      "source": "./plugins/filmcraft-bridge",
+      "description": "Split, trim, edit (effects, color looks, titles, speed, audio), join, convert and export video with the FilmCraft editor installed on Windows, macOS or Linux, and keep every edit editable. Not affiliated with FilmCraft or Storytold.",
+      "version": "1.1.4",
+      "category": "design",
+      "keywords": [
+        "filmcraft",
+        "video",
+        "video-editing",
+        "split",
+        "trim",
+        "effects"
+      ]
+    },
+    {
+      "name": "pdfcraft-bridge",
+      "source": "./plugins/pdfcraft-bridge",
+      "description": "Read, split, merge, organize, watermark, protect, redact, fill, sign, convert, compress and OCR PDFs with the PdfCraft editor installed on Windows, macOS or Linux. Not affiliated with PdfCraft or Storytold.",
+      "version": "1.0.3",
+      "category": "productivity",
+      "keywords": [
+        "pdfcraft",
+        "pdf",
+        "split",
+        "merge",
+        "watermark",
+        "redact"
+      ]
+    },
+    {
+      "name": "wordcraft-bridge",
+      "source": "./plugins/wordcraft-bridge",
+      "description": "Write, edit (find/replace, comments, tracked changes), mail-merge, convert and preview documents with the WordCraft word processor installed on Windows, macOS or Linux. Not affiliated with WordCraft or Storytold.",
+      "version": "1.0.1",
+      "category": "productivity",
+      "keywords": [
+        "wordcraft",
+        "word",
+        "docx",
+        "documents",
+        "word-processor",
+        "mail-merge"
+      ]
+    },
+    {
+      "name": "soundcraft-bridge",
+      "source": "./plugins/soundcraft-bridge",
+      "description": "Make music and audio with the SoundCraft DAW installed on Windows, macOS or Linux: multitrack sessions from audio files and synth or drum notes, effects, busses, mixdowns with loudness, stems, MIDI, audio processing and conversion. Not affiliated with SoundCraft or Storytold.",
+      "version": "1.0.0",
+      "category": "audio",
+      "keywords": [
+        "soundcraft",
+        "daw",
+        "audio",
+        "music",
+        "mixing",
+        "multitrack"
+      ]
+    },
+    {
+      "name": "deckcraft-bridge",
+      "source": "./plugins/deckcraft-bridge",
+      "description": "Create, edit and convert presentations with the DeckCraft app installed on Windows, macOS or Linux: slides with bullets, pictures, charts, tables and notes, themes, transitions, PowerPoint pptx, pdf and slide images. Not affiliated with DeckCraft or Storytold.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "keywords": [
+        "deckcraft",
+        "powerpoint",
+        "pptx",
+        "presentation",
+        "slides",
+        "deck"
+      ]
+    },
+    {
+      "name": "gridcraft-bridge",
+      "source": "./plugins/gridcraft-bridge",
+      "description": "Build, edit, read and convert spreadsheets with the GridCraft app installed on Windows, macOS or Linux: sheets with live formulas, tables, formats, conditional formatting, charts and PivotTables, xlsx, csv, json, html and pdf. Not affiliated with GridCraft or Storytold.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "keywords": [
+        "gridcraft",
+        "excel",
+        "xlsx",
+        "spreadsheet",
+        "formulas",
+        "csv"
+      ]
+    }
+  ]
+}
